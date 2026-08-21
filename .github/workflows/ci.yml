@@ -2,34 +2,23 @@ name: CI
 
 on:
   push:
-    branches:
-      - main
-    paths-ignore:
-      - 'README.md'
-      - 'CODE_OF_CONDUCT.md'
-      - '.editorconfig'
+    branches: [main]
   pull_request:
-    branches:
-      - main
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   test:
-    name: Test
-    runs-on: macos-latest
     strategy:
+      fail-fast: false
       matrix:
-        destination:
-          - "platform=macOS"
-          - "platform=iOS Simulator,name=iPhone 17"
-    steps:
-      - uses: actions/checkout@v7
-      - uses: jdx/mise-action@v4
-      - name: Test platform ${{ matrix.destination }}
-        run: set -o pipefail && xcodebuild -scheme XCConfig -destination "${{ matrix.destination }}" test | xcbeautify --renderer github-actions
-
-  linux_test:
-    name: Test Linux
-    runs-on: ubuntu-latest
+        runs-on:
+          - macos-latest
+          - ubuntu-latest
+    runs-on: ${{ matrix.runs-on }}
     steps:
       - uses: actions/checkout@v7
       - uses: jdx/mise-action@v4

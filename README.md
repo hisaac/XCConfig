@@ -1,20 +1,12 @@
-<div align="center">
-
-[![Build Status][build status badge]][build status]
-[![Platforms][platforms badge]][platforms]
-
-</div>
-
 # XCConfig
-xcconfig file parsing and evaluation
 
-This kinda works, but is quite limited.
+A Swift library for parsing and evaluating `xcconfig` files.
 
 ## Integration
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/hisaac/XCConfig", branch: "main")
+	.package(url: "https://github.com/hisaac/XCConfig", branch: "main")
 ]
 ```
 
@@ -36,15 +28,4 @@ let output = Parser().parse(input)
 
 ## Contributing and Collaboration
 
-I'd love to hear from you! Get in touch via [mastodon](https://mastodon.social/@hisaac), an issue, or a pull request.
-
-I prefer collaboration, and would love to find ways to work together if you have a similar project.
-
-I prefer indentation with tabs for improved accessibility. But, I'd rather you use the system you want and make a PR than hesitate because of whitespace.
-
 By participating in this project you agree to abide by the [Contributor Code of Conduct](CODE_OF_CONDUCT.md).
-
-[build status]: https://github.com/hisaac/XCConfig/actions
-[build status badge]: https://github.com/hisaac/XCConfig/workflows/CI/badge.svg
-[platforms]: https://swiftpackageindex.com/hisaac/XCConfig
-[platforms badge]: https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fhisaac%2FXCConfig%2Fbadge%3Ftype%3Dplatforms

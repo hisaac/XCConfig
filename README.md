@@ -2,6 +2,8 @@
 
 A Swift library for parsing and evaluating `xcconfig` files.
 
+Originally created by @mattmassicotte. Now maintained by @hisaac.
+
 ## Integration
 
 ```swift

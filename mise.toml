@@ -2,12 +2,6 @@
 activate_aggressive = true
 experimental = true
 
-[plugins]
-xcode = "https://github.com/hisaac/mise-xcode.git"
-
-[env._.xcode]
-version = "26.6"
-
 [tools]
 swift = "latest"
 

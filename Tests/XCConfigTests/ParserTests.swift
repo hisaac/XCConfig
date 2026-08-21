@@ -2,8 +2,8 @@ import XCTest
 @testable import XCConfig
 
 final class ParserTests: XCTestCase {
-    func testEmptyFile() throws {
-        let input = """
+	func testEmptyFile() throws {
+		let input = """
 """
 
 		let output = Parser().parse(input)
@@ -11,10 +11,10 @@ final class ParserTests: XCTestCase {
 		]
 
 		XCTAssertEqual(output, expected)
-    }
+	}
 
-    func testKeyValue() throws {
-        let input = """
+	func testKeyValue() throws {
+		let input = """
 HELLO = world
 """
 
@@ -24,7 +24,7 @@ HELLO = world
 		]
 
 		XCTAssertEqual(output, expected)
-    }
+	}
 
 	func testComments() throws {
 		let input = """
@@ -40,8 +40,8 @@ HELLO = world
 		XCTAssertEqual(output, expected)
 	}
 
-    func testSimpleInclude() throws {
-        let input = """
+	func testSimpleInclude() throws {
+		let input = """
 #include "other.xcconfig"
 """
 
@@ -51,7 +51,7 @@ HELLO = world
 		]
 
 		XCTAssertEqual(output, expected)
-    }
+	}
 
 	func testOptionalInclude() throws {
 		let input = """

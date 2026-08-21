@@ -11,9 +11,9 @@ public enum ConditionKey: Hashable, Sendable {
 
 /// Values both on the left and right sides of an assignment statement
 public enum Value: Hashable, Sendable {
-    case string(String)
-    indirect case substitution(Value, default: String?)
-    case composition([Value])
+	case string(String)
+	indirect case substitution(Value, default: String?)
+	case composition([Value])
 }
 
 extension Value: CustomStringConvertible {
@@ -62,8 +62,8 @@ extension Assignment: CustomStringConvertible {
 
 /// Represents the statements in a xcconfig file
 public enum Statement: Hashable, Sendable {
-    case includeDirective(String)
-    case optionalIncludeDirective(String)
+	case includeDirective(String)
+	case optionalIncludeDirective(String)
 	case assignment(Assignment)
 }
 

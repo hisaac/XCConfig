@@ -3,12 +3,12 @@
 import PackageDescription
 
 let package = Package(
-    name: "XCConfig",
-    products: [
-        .library(name: "XCConfig", targets: ["XCConfig"]),
-    ],
-    targets: [
-        .target(name: "XCConfig"),
+	name: "XCConfig",
+	products: [
+		.library(name: "XCConfig", targets: ["XCConfig"]),
+	],
+	targets: [
+		.target(name: "XCConfig"),
 		.testTarget(
 			name: "XCConfigTests",
 			dependencies: ["XCConfig"],
@@ -16,15 +16,15 @@ let package = Package(
 				.copy("TestData"),
 			]
 		),
-    ]
+	]
 )
 
 let swiftSettings: [SwiftSetting] = [
-    .enableExperimentalFeature("StrictConcurrency")
+	.enableExperimentalFeature("StrictConcurrency")
 ]
 
 for target in package.targets {
-    var settings = target.swiftSettings ?? []
-    settings.append(contentsOf: swiftSettings)
-    target.swiftSettings = settings
+	var settings = target.swiftSettings ?? []
+	settings.append(contentsOf: swiftSettings)
+	target.swiftSettings = settings
 }

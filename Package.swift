@@ -1,4 +1,4 @@
-// swift-tools-version: 5.8
+// swift-tools-version:6.3
 
 import PackageDescription
 
@@ -16,15 +16,6 @@ let package = Package(
 				.copy("TestData"),
 			]
 		),
-	]
+	],
+	swiftLanguageModes: [.v6]
 )
-
-let swiftSettings: [SwiftSetting] = [
-	.enableExperimentalFeature("StrictConcurrency")
-]
-
-for target in package.targets {
-	var settings = target.swiftSettings ?? []
-	settings.append(contentsOf: swiftSettings)
-	target.swiftSettings = settings
-}

@@ -30,4 +30,6 @@ let output = Parser().parse(input)
 
 ## Contributing and Collaboration
 
+I welcome all suggestions, questions, and/or pull requests! Please don't hesitate to reach out or contribute.
+
 By participating in this project you agree to abide by the [Contributor Code of Conduct](CODE_OF_CONDUCT.md).

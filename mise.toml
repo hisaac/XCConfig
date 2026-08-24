@@ -6,7 +6,7 @@ experimental = true
 swift = "6.3"
 
 # tasks
-#
+
 [tasks.bootstrap]
 alias = "up"
 run = ["mise install", "swift package resolve"]

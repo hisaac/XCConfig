@@ -3,7 +3,7 @@ activate_aggressive = true
 experimental = true
 
 [tools]
-swift = "6.3"
+swift = "6.4"
 
 # tasks
 
